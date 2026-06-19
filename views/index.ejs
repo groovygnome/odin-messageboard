@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Mini Message Board</title>
+    </head>
+
+    <body>
+        <ul>
+            <% messages.forEach((message) => { %>
+                <p><%= message.text %></p>
+                <p><%= message.user %></p>
+                <p><%= message.added %></p>
+            <% }); %>
+        </ul>
+        <a href='/new'>Create a New Message</a>
+    </body>
+</html>
