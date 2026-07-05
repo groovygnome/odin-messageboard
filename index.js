@@ -15,8 +15,8 @@ app.get('/', async (req, res) => {
     const messages = await db.getAllMessages();
     res.render('index', { messages: messages })
 });
-app.use('/new', messageRoute);
-app.use('/message', detailRoute);
+app.use('/', messageRoute);
+
 
 const PORT = 3000;
 app.listen(PORT, (error) => {

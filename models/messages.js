@@ -10,12 +10,17 @@ async function getMessage(searchId) {
     return rows;
 }
 
+async function deleteMessages() {
+    await pool.query('DELETE FROM messages');
+}
+
 async function insertMessage(message, username) {
     await pool.query('INSERT INTO messages (message, username) VALUES ($1, $2)', [message, username]);
 }
 
 module.exports = {
     getAllMessages,
+    deleteMessages,
     getMessage,
     insertMessage
 };

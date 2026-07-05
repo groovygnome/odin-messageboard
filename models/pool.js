@@ -4,6 +4,6 @@ module.exports = new Pool({
     host: 'localhost',
     user: 'groovygnome',
     database: 'message_board',
-    password: '',
+    password: '--------',
     port: 5432,
 });
