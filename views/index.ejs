@@ -5,9 +5,14 @@
 
     <body>
         <ul>
-            <% messages.forEach((message, index) => { %>
-                <%- include('message', {message: message}) %>
-                <a href='./message/<%=index%>'>Open Message</a>
+            <% messages.forEach(message => { %>
+                <li>
+                <p><%= message.message %></p>
+                <p><%= message.username %></p>
+                <p><%= message.created_at %></p>
+                <p><%= message.id %></p>
+                <a href='./message/<%=message.id%>'>Open Message</a>
+                </li>
             <% }); %>
         </ul>
         <a href='/new'>Create a New Message</a>

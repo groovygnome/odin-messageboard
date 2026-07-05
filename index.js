@@ -6,12 +6,13 @@ const detailRoute = require('./routes/detail');
 
 app.use(express.urlencoded({ extended: true }));
 
-const messages = require('./models/messages');
+const db = require('./models/messages');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const messages = await db.getAllMessages();
     res.render('index', { messages: messages })
 });
 app.use('/new', messageRoute);

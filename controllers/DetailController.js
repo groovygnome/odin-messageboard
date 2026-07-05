@@ -1,7 +1,11 @@
-const messages = require('../models/messages');
+const db = require('../models/messages');
+
+async function getOneMessage(req, res) {
+    const message = await db.getMessage(req.params.id);
+    console.log(message);
+    res.render('detail', { message: message });
+}
 
 module.exports = {
-    get: (req, res) => {
-        res.render('detail', { message: messages[req.params.index], index: req.params.index })
-    }
-}
+    getOneMessage
+};
