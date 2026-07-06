@@ -4,13 +4,11 @@
     </head>
 
     <body>
+        <%- include('./partials/error.ejs') %>
         <ul>
             <% messages.forEach(message => { %>
                 <li>
-                <p><%= message.message %></p>
-                <p><%= message.username %></p>
-                <p><%= message.created_at %></p>
-                <p><%= message.id %></p>
+                <%- include('./partials/message.ejs', {message: message}) %>
                 <a href='./message/<%=message.id%>'>Open Message</a>
                 </li>
             <% }); %>

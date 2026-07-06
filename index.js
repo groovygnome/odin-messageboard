@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('node:path');
 const messageRoute = require('./routes/message');
-const detailRoute = require('./routes/detail');
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,6 +15,7 @@ app.get('/', async (req, res) => {
     res.render('index', { messages: messages })
 });
 app.use('/', messageRoute);
+app.use('/new', messageRoute);
 
 
 const PORT = 3000;

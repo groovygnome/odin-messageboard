@@ -18,7 +18,6 @@ async function deleteMessages(req, res) {
 
 async function getOneMessage(req, res) {
     const message = await db.getMessage(req.params.id);
-    console.log(message);
     res.render('detail', { message: message });
 }
 
