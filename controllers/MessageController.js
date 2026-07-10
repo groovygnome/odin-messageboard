@@ -11,10 +11,10 @@ async function newMessage(req, res) {
     }
 }
 
-async function deleteMessages(req, res) {
-    await db.deleteMessages();
-    res.redirect('/');
-}
+//async function deleteMessages(req, res) {
+//    await db.deleteMessages();
+//    res.redirect('/');
+//}
 
 async function getOneMessage(req, res) {
     const message = await db.getMessage(req.params.id);
@@ -23,6 +23,6 @@ async function getOneMessage(req, res) {
 
 module.exports = {
     newMessage,
-    deleteMessages,
+    //deleteMessages,
     getOneMessage
 }
